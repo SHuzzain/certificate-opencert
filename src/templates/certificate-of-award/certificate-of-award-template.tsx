@@ -4,6 +4,7 @@ import { CertificateOfAward } from "../samples";
 import { Page, PageContainer } from "../../components/page";
 
 const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfAward>> = ({ document }) => {
+
   // JSONPlaceholder API call - just console log the response
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +30,14 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
     return formattedDate
   }
   console.log({ document }, "checking")
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const id = urlParams.get('id');
+
+    console.log({ id }, "checking")
+
+  }, [location.search]);
   return (
     <PageContainer>
       <Page>
