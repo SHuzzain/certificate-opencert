@@ -28,7 +28,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
     });
     return formattedDate
   }
-
+  console.log({ document }, "checking")
   return (
     <PageContainer>
       <Page>
