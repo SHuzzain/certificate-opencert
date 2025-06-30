@@ -19,10 +19,20 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
     fetchData();
   }, []);
 
+  function currentDate() {
+    const date = new Date();
+    const formattedDate = date.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: "long",
+      year: "numeric"
+    });
+    return formattedDate
+  }
+
   return (
     <PageContainer>
       <Page>
-        <div 
+        <div
           style={{
             width: '100%',
             height: '100%',
@@ -33,7 +43,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
           }}
         >
           {/* Decorative Border */}
-          <div 
+          <div
             style={{
               width: '100%',
               height: '100%',
@@ -44,7 +54,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
             }}
           >
             {/* Header with centered SMU Logo only */}
-            <div 
+            <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -55,7 +65,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
               }}
             >
               {/* SMU Logo - Centered and Bigger */}
-              <img 
+              <img
                 src="https://www.sgcodecampus.com/static/e6c0572d572e712178020c7e015efba2/dcf86/smu.webp"
                 alt="SMU Logo"
                 style={{
@@ -67,7 +77,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
             </div>
 
             {/* Main Content */}
-            <div 
+            <div
               style={{
                 padding: '40px 80px 60px 80px',
                 textAlign: 'center',
@@ -80,7 +90,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
               {/* Certificate Content */}
               <div>
                 {/* Certificate Title */}
-                <div 
+                <div
                   style={{
                     fontSize: '48px',
                     fontWeight: 'bold',
@@ -94,7 +104,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                 </div>
 
                 {/* Certification Text */}
-                <div 
+                <div
                   style={{
                     fontSize: '18px',
                     color: '#333',
@@ -105,7 +115,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                 </div>
 
                 {/* Recipient Name */}
-                <div 
+                <div
                   style={{
                     fontSize: '42px',
                     fontWeight: 'bold',
@@ -119,7 +129,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                 </div>
 
                 {/* Underline */}
-                <div 
+                <div
                   style={{
                     width: '400px',
                     height: '2px',
@@ -129,7 +139,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                 />
 
                 {/* Description */}
-                <div 
+                <div
                   style={{
                     fontSize: '16px',
                     color: '#333',
@@ -144,7 +154,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                 </div>
 
                 {/* Course Name */}
-                <div 
+                <div
                   style={{
                     fontSize: '24px',
                     color: '#B8860B',
@@ -158,7 +168,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
               </div>
 
               {/* Bottom Section - Signature and Date aligned properly */}
-              <div 
+              <div
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -171,7 +181,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                 {/* Signature Section */}
                 <div style={{ textAlign: 'left', width: '300px' }}>
                   {/* Signature Image Container - Fixed height for alignment */}
-                  <div 
+                  <div
                     style={{
                       width: '200px',
                       height: '60px',
@@ -181,9 +191,9 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                       marginBottom: '5px'
                     }}
                   >
-                    <img 
-                      src={document.signature.signature} 
-                      alt="Signature" 
+                    <img
+                      src={document.signature.signature}
+                      alt="Signature"
                       style={{
                         maxWidth: '180px',
                         maxHeight: '50px',
@@ -192,7 +202,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                     />
                   </div>
                   {/* Signature Line - Aligned with date line */}
-                  <div 
+                  <div
                     style={{
                       width: '200px',
                       height: '1px',
@@ -200,7 +210,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                       marginBottom: '8px'
                     }}
                   />
-                  <div 
+                  <div
                     style={{
                       fontSize: '14px',
                       color: '#333',
@@ -210,7 +220,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                   >
                     {document.signature.name}
                   </div>
-                  <div 
+                  <div
                     style={{
                       fontSize: '12px',
                       color: '#B8860B',
@@ -219,7 +229,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                   >
                     {document.signature.designation}, SMU Academy
                   </div>
-                  <div 
+                  <div
                     style={{
                       fontSize: '12px',
                       color: '#B8860B'
@@ -233,7 +243,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                 <div style={{ textAlign: 'right', width: '200px' }}>
                   {/* Empty space to match signature image height */}
                   <div style={{ height: '65px' }}></div>
-                  <div 
+                  <div
                     style={{
                       fontSize: '18px',
                       color: '#B8860B',
@@ -241,10 +251,11 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                       marginBottom: '5px'
                     }}
                   >
-                    24 June 2025
+
+                    {currentDate()}
                   </div>
                   {/* Date Line - Aligned with signature line */}
-                  <div 
+                  <div
                     style={{
                       width: '150px',
                       height: '1px',
@@ -253,7 +264,7 @@ const CertificateOfAwardTemplate: FunctionComponent<TemplateProps<CertificateOfA
                       marginLeft: 'auto'
                     }}
                   />
-                  <div 
+                  <div
                     style={{
                       fontSize: '12px',
                       color: '#B8860B'
