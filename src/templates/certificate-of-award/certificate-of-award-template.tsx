@@ -5,12 +5,12 @@ import { PageContainer } from "../../components/page";
 
 const CertificateOfAwardTemplate: FunctionComponent<TemplateProps> = ({ document }) => {
 
-  const { signature } = document as unknown as CertificateOfAward;
+  const { signature, recipient = { dimensions: { x: 800, y: 800 } } } = document as unknown as CertificateOfAward;
 
 
   return (
     <PageContainer>
-      <img src={signature.signature} alt="Signature" style={{ width: "100%", height: "100%" }} />
+      <img src={signature.signature} alt="Signature" style={{ width: recipient.dimensions.x, height: recipient.dimensions.y }} />
     </PageContainer>
   );
 };

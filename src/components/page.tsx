@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent, ReactNode } from "react";
 
 export const pageHeight = "29.7cm";
 export const pageWidth = "21cm";
@@ -9,13 +9,7 @@ interface PageProps {
 
 export const PageContainer: FunctionComponent<PageProps> = ({ children }) => (
   <div
-    style={{
-      display: 'flex',
-      justifyContent: 'center',
-      padding: '2rem',
-      background: '#f0f0f0',
-      minHeight: '100vh'
-    }}
+    className="flex justify-center p-4 bg-gray-100 min-h-screen"
   >
     {children}
   </div>
