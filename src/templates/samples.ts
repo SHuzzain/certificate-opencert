@@ -67,6 +67,10 @@ export const sampleCertificateOfAward: CertificateOfAward = {
   name: "Certificate of Excellence",
   recipient: {
     name: "John Doe",
+    dimensions: {
+      x: "800px",
+      y: "800px",
+    },
   },
   award: {
     achievementArea: "Outstanding Academic Performance",
