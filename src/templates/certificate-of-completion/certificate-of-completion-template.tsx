@@ -27,10 +27,10 @@ interface CertificateOfCompletion {
 }
 
 export const CertificateOfCompletionTemplate: FunctionComponent<TemplateProps> = ({ document }) => {
-  const { signature, recipient = { dimensions: { x: 800, y: 800 } } } = document as unknown as CertificateOfCompletion;
+  const { signature, recipient } = document as unknown as CertificateOfCompletion;
   return (
     <PageContainer>
-      <img src={signature.signature} alt="Signature" style={{ width: recipient.dimensions.x, height: recipient.dimensions.y }} />
+      <img src={signature.signature} alt="Signature" style={{ width: recipient?.dimensions?.x || 800, height: recipient?.dimensions?.y || 800 }} />
     </PageContainer>
   )
 }
